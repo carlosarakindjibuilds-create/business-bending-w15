@@ -10,9 +10,10 @@ export default function AboutPage() {
         <p className="eyebrow">Validador del Comercio · Memo de valor</p>
         <h1>El Memo de Valor 10:1</h1>
         <p className="intro">
-          Un perfil verificado del flujo de efectivo puede sustituir costosas
-          visitas de campo y reducir pérdidas evitables por crédito y errores
-          de conciliación.
+          Exploramos si un registro consentido del flujo de efectivo puede
+          ayudar a revisar operaciones. No afirmamos que sustituya visitas,
+          prediga impagos ni reduzca pérdidas; cualquier beneficio requiere
+          validación con cada distribuidor.
         </p>
       </section>
 
@@ -103,7 +104,7 @@ export default function AboutPage() {
           </ul>
         </article>
         <article className="memo-card memo-card--highlight">
-          <h2>Por qué se cumple la relación 10:1</h2>
+          <h2>Hipótesis de valor 10:1 por validar</h2>
           <p>
             La relación 10:1 es una hipótesis de valor, no un ahorro medido ni
             una promesa. Debe validarse con costos documentados del comprador

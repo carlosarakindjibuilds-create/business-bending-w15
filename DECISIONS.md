@@ -54,6 +54,7 @@ Repository was clean on `main` before work. Inspected the existing navigation, p
 5. This close — `chore(w15): complete mechanical audit, 360px mobile check and decisions log`
 6. Verification follow-up — `docs(w15): record successful Vercel deployments`
 7. Channel follow-up — `feat(w15): connect confirmed public social channel`
+8. Accuracy follow-up — `fix(w15): remove unverified savings claims from about page`
 
 All five phase commits were pushed to `origin main`. GitHub's Vercel commit-status checks report `Deployment has completed` for Commit #1 (`9c34e40`), Commit #2 (`a124e1f`), and Commit #5 (`0be168e`), confirming at least three successful deployments. The production alias `https://business-bending-w15.vercel.app/distribution` also loaded the new route directly.
 

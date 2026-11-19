@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { PUBLIC_SOCIAL_CHANNEL_URL } from "../config/publicChannel.js";
 import {
   supabase,
   supabaseConfigurationError,
@@ -421,7 +422,13 @@ export default function WaitlistPage() {
         )}
 
         <p className="waitlist-public-channel">
-          Canal social público: enlace pendiente de confirmar.
+          {PUBLIC_SOCIAL_CHANNEL_URL ? (
+            <a href={PUBLIC_SOCIAL_CHANNEL_URL} target="_blank" rel="noreferrer">
+              Visita nuestro canal social público
+            </a>
+          ) : (
+            "Canal social público: enlace pendiente de confirmar."
+          )}
         </p>
         <Link className="waitlist-back-link" to="/distribution">Volver a Distribución</Link>
       </section>

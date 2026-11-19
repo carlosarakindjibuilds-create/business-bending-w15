@@ -10,6 +10,8 @@ import {
   validateAssumptions,
 } from "../utils/pricingModel.js";
 
+const COHORT_LABEL = "DATOS SIMULADOS / COHORTE DE PRUEBA (n=60)";
+
 const CURRENCY = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 0,
 });
@@ -281,7 +283,7 @@ export default function PricingPage() {
             <p className="eyebrow">Cambia un supuesto y observa el resultado</p>
             <h2 id="simulator-heading">Simulador de ingresos</h2>
           </div>
-          <span className="simulation-badge">DATOS SIMULADOS</span>
+          <span className="simulation-badge">{COHORT_LABEL}</span>
         </div>
 
         <div className="simulator-layout">
@@ -352,7 +354,7 @@ export default function PricingPage() {
             <p className="eyebrow">Solo en este navegador · sin cuentas ni datos personales</p>
             <h2 id="scenarios-heading">Escenarios guardados</h2>
           </div>
-          <span className="simulation-badge">DATOS SIMULADOS</span>
+          <span className="simulation-badge">{COHORT_LABEL}</span>
         </div>
         <p className="scenario-privacy">
           Los escenarios solo contienen los cinco supuestos del simulador y un
@@ -392,7 +394,7 @@ export default function PricingPage() {
             <article className="scenario-row" key={scenario.id}>
               <div>
                 <strong>{getScenarioDisplayName(scenario)}</strong>
-                <span className="simulation-badge">DATOS SIMULADOS</span>
+                <span className="simulation-badge">{COHORT_LABEL}</span>
               </div>
               <button type="button" className="secondary-action" onClick={() => loadScenario(scenario)}>
                 Cargar
@@ -403,7 +405,7 @@ export default function PricingPage() {
             <article className="scenario-row" key={scenario.id}>
               <div>
                 <strong>{getScenarioDisplayName(scenario)}</strong>
-                <span className="simulation-badge">DATOS SIMULADOS</span>
+                <span className="simulation-badge">{COHORT_LABEL}</span>
               </div>
               <div className="scenario-actions">
                 <button type="button" className="secondary-action" onClick={() => loadScenario(scenario)}>

@@ -487,6 +487,7 @@ h1 {
 .simulation-badge {
   display: inline-flex;
   width: fit-content;
+  max-width: 100%;
   align-items: center;
   padding: 5px 8px;
   color: #583f00;
@@ -497,7 +498,8 @@ h1 {
   font-weight: 850;
   letter-spacing: 0.045em;
   line-height: 1.3;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .simulator-layout {
@@ -1185,6 +1187,102 @@ h1 {
   text-underline-offset: 3px;
 }
 
+.distribution-metrics {
+  margin: 36px 0;
+  padding: clamp(18px, 4vw, 28px);
+  background: #fffdf8;
+  border: 1px solid #e6e0d1;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgb(63 53 33 / 6%);
+}
+
+.distribution-metrics .section-heading {
+  margin: 0 0 14px;
+}
+
+.distribution-metrics .section-heading h2 {
+  font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+}
+
+.metrics-honesty-note {
+  margin: 0 0 16px;
+  color: #50564c;
+  line-height: 1.55;
+}
+
+.distribution-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.distribution-metric-card {
+  min-width: 0;
+  padding: 14px;
+  background: #f5f7f1;
+  border-radius: 12px;
+}
+
+.distribution-metric-card h3 {
+  margin: 0;
+  color: #50564c;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.distribution-metric-card p {
+  margin: 9px 0 5px;
+  color: #294a32;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  font-weight: 850;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.distribution-metric-card span {
+  display: block;
+  color: #5f665c;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.distribution-loop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 16px;
+  background: #edf4e9;
+  border-radius: 12px;
+}
+
+.distribution-loop .eyebrow {
+  margin-bottom: 5px;
+}
+
+.distribution-loop p:not(.eyebrow) {
+  margin: 0;
+  color: #3e493a;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.distribution-loop a:not(.distribution-cta) {
+  color: #294a32;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.distribution-loop .distribution-cta {
+  flex: 0 0 auto;
+}
+
+.about-simulation-notice {
+  margin: 0 0 16px;
+}
+
 @media (max-width: 540px) {
   .top-nav {
     align-items: flex-start;
@@ -1239,6 +1337,15 @@ h1 {
   }
 
   .waitlist-session-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .distribution-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .distribution-loop {
     align-items: stretch;
     flex-direction: column;
   }

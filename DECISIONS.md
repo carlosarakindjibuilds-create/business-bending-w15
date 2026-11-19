@@ -52,8 +52,9 @@ Repository was clean on `main` before work. Inspected the existing navigation, p
 3. `4fa5a9c` — `feat(w15): build /waitlist capture with google oauth, rls and strict validation`
 4. `7567265` — `feat(w15): add honest distribution metrics and public loop to /about`
 5. This close — `chore(w15): complete mechanical audit, 360px mobile check and decisions log`
+6. Verification follow-up — `docs(w15): record successful Vercel deployments`
 
-Each of the first four commits was pushed to `origin main`. The final close is pushed with this record. Pushes request the configured Vercel integration to deploy; deployment success and a live production URL were not independently available to verify in this session.
+All five phase commits were pushed to `origin main`. GitHub's Vercel commit-status checks report `Deployment has completed` for Commit #1 (`9c34e40`), Commit #2 (`a124e1f`), and Commit #5 (`0be168e`), confirming at least three successful deployments. The production alias `https://business-bending-w15.vercel.app/distribution` also loaded the new route directly.
 
 ### Mechanical audit
 

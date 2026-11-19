@@ -156,10 +156,10 @@ function CapturePage() {
   };
 
   const buttonLabel = isRecording
-    ? "Finalizar sesión"
+    ? "Terminar grabación"
     : sessionId
-      ? "Reanudar captura"
-      : "Iniciar captura";
+      ? "Continuar mi libreta"
+      : "Grabar mis ventas";
   const statusLabel = isRecording
     ? "Escuchando"
     : isPaused
@@ -175,6 +175,10 @@ function CapturePage() {
         <p className="intro">
           Inicia la captura cuando estés lista. Si necesitas atender a alguien,
           el sistema resguarda lo grabado hasta ese momento.
+        </p>
+
+        <p className="privacy-seal">
+          <strong>Tu libreta privada:</strong> nadie más ve tus cuentas, no pedimos RFC, SAT ni contraseñas.
         </p>
 
         <div className="status-row" aria-live="polite">
@@ -296,8 +300,15 @@ function CapturePage() {
             {displayedError}
           </p>
         )}
+
+        <Link className="capture-business-link" to="/distribution">
+          ¿Eres distribuidor o empresa? Entra aquí
+        </Link>
       </section>
-      <ConsoleLogger />
+      <details className="technical-log">
+        <summary>Ver registro técnico</summary>
+        <ConsoleLogger />
+      </details>
     </main>
   );
 }
@@ -321,21 +332,23 @@ function AppNavigation() {
       <Link className="nav-brand" to="/" aria-label="Inicio de Validador del Comercio">
         Validador del Comercio
       </Link>
-      <nav className="nav-links" aria-label="Navegación principal">
-        <Link aria-current={pathname === "/" ? "page" : undefined} to="/">Captura</Link>
-        <Link aria-current={pathname === "/pricing" ? "page" : undefined} to="/pricing">
-          Precios y Simulador
-        </Link>
-        <Link aria-current={pathname === "/about" ? "page" : undefined} to="/about">
-          Memo 10:1
-        </Link>
-        <Link aria-current={pathname === "/distribution" ? "page" : undefined} to="/distribution">
-          Distribución
-        </Link>
-        <Link aria-current={pathname === "/waitlist" ? "page" : undefined} to="/waitlist">
-          Acceso
-        </Link>
-      </nav>
+      {pathname !== "/" && (
+        <nav className="nav-links" aria-label="Navegación principal">
+          <Link to="/">Captura</Link>
+          <Link aria-current={pathname === "/pricing" ? "page" : undefined} to="/pricing">
+            Precios y Simulador
+          </Link>
+          <Link aria-current={pathname === "/about" ? "page" : undefined} to="/about">
+            Memo 10:1
+          </Link>
+          <Link aria-current={pathname === "/distribution" ? "page" : undefined} to="/distribution">
+            Distribución
+          </Link>
+          <Link aria-current={pathname === "/waitlist" ? "page" : undefined} to="/waitlist">
+            Acceso
+          </Link>
+        </nav>
+      )}
     </header>
   );
 }

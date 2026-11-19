@@ -55,6 +55,7 @@ Repository was clean on `main` before work. Inspected the existing navigation, p
 6. Verification follow-up — `docs(w15): record successful Vercel deployments`
 7. Channel follow-up — `feat(w15): connect confirmed public social channel`
 8. Accuracy follow-up — `fix(w15): remove unverified savings claims from about page`
+9. Persona follow-up — `fix(w15): resolve Doña Mari persona test friction on merchant home screen`
 
 All five phase commits were pushed to `origin main`. GitHub's Vercel commit-status checks report `Deployment has completed` for Commit #1 (`9c34e40`), Commit #2 (`a124e1f`), and Commit #5 (`0be168e`), confirming at least three successful deployments. The production alias `https://business-bending-w15.vercel.app/distribution` also loaded the new route directly.
 
@@ -74,3 +75,7 @@ All five phase commits were pushed to `origin main`. GitHub's Vercel commit-stat
 5. Redeploy after setting Vercel variables. Test with two distinct Google accounts and verify each sees only its own row before inviting users.
 
 Do not treat OAuth, lead capture, external social metrics, SAT verification, WhatsApp OTP, speech models, or automated deletion as live until each is configured and separately tested.
+
+## Week 15 — Doña Mari Persona Test: Merchant Home
+
+The 360px persona test found that the floating black event log looked like surveillance or an error, corporate navigation distracted from daily capture, and the privacy boundary was unclear. On `/`, the primary action now reads **“Grabar mis ventas”** (with plain-language stop/resume labels), and a visible privacy seal says: “Tu libreta privada: nadie más ve tus cuentas, no pedimos RFC, SAT ni contraseñas.” Corporate tabs are hidden only on the merchant home; a discreet end-of-screen link leads to `/distribution`, while the brand and technical routes remain accessible. The event logger remains functional but is collapsed by default behind “Ver registro técnico”.

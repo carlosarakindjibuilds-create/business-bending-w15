@@ -42,3 +42,32 @@ Created the Week 15 packet before modifying `src/`. Preserve the existing React/
 ### Session 1 verification
 
 Repository was clean on `main` before work. Inspected the existing navigation, pages, CSS palette/typography, Vercel SPA rewrite, package manifest, and ignore rules. Packet and this decision record are the only intended changes before Commit #1; no source files have been touched.
+
+## Week 15 — Technical Close
+
+### Completed commits
+
+1. `9c34e40` — `docs(w15): create week 15 packet, mermaid flow and campaign playbook`
+2. `a124e1f` — `feat(w15): add /distribution method-to-content engine and supabase rls schema`
+3. `4fa5a9c` — `feat(w15): build /waitlist capture with google oauth, rls and strict validation`
+4. `7567265` — `feat(w15): add honest distribution metrics and public loop to /about`
+5. This close — `chore(w15): complete mechanical audit, 360px mobile check and decisions log`
+
+Each of the first four commits was pushed to `origin main`. The final close is pushed with this record. Pushes request the configured Vercel integration to deploy; deployment success and a live production URL were not independently available to verify in this session.
+
+### Mechanical audit
+
+- `npm run build` passed after each app phase and in the final audit.
+- Browser route checks passed for `/`, `/pricing`, `/about`, `/distribution`, and `/waitlist` at 360 px and 1280 px. No horizontal overflow was measured; direct route navigation/refresh and page titles worked.
+- `.env.local` and `.env.*.local` are ignored; no local environment file is tracked. Only placeholder values are present in `.env.example`.
+- The app does not receive or store lead data until Supabase is configured. The social channel URL remains unset until the official URL is confirmed; metrics stay at honest zero/unreported counts.
+
+### Supabase setup before accepting leads
+
+1. Create/configure the Supabase project and enable Google in **Authentication → Providers**.
+2. Paste the complete `supabase/schema.sql` into **SQL Editor** and run it. Confirm the `waitlist_leads` table and both owner-scoped RLS policies are present.
+3. In **Authentication → URL Configuration**, add the deployed app's `/waitlist` URL and local `http://localhost:5173/waitlist` to allowed redirect URLs.
+4. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in Vercel for the appropriate deployment environments; use the project's public anon key only, never its service-role key. Set the same values in an ignored local `.env.local` for local testing.
+5. Redeploy after setting Vercel variables. Test with two distinct Google accounts and verify each sees only its own row before inviting users.
+
+Do not treat OAuth, lead capture, external social metrics, SAT verification, WhatsApp OTP, speech models, or automated deletion as live until each is configured and separately tested.

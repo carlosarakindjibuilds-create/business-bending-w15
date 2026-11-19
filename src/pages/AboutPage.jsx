@@ -37,7 +37,7 @@ export default function AboutPage() {
           <article className="distribution-metric-card">
             <h3>Seguidores reportados</h3>
             <p>0 reportes</p>
-            <span>Canal oficial pendiente de confirmar</span>
+            <span>Canal conectado; contador de seguidores no instrumentado</span>
           </article>
           <article className="distribution-metric-card">
             <h3>Clics atribuidos</h3>

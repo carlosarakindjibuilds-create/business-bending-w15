@@ -165,7 +165,7 @@ Mockup editorial fotorrealista de una aplicación móvil de asistencia para una 
 
 ## 2. Definición de éxito
 
-**Before the module closes, X works:** existe una ruta `/distribution` con simulador de Input → Método → Contenido Útil y tres formatos demostrativos; `/waitlist` ofrece acceso con Google, validación en cliente y captura protegida por RLS; `/about` publica métricas de distribución honestas, distinguiendo ceros reales de datos simulados, e incluye un enlace al canal social público cuando se proporcione su URL. Las rutas pueden funcionar como demostración local, pero Auth y persistencia requieren configurar Supabase.
+**Before the module closes, X works:** existe una ruta `/distribution` con simulador de Input → Método → Contenido Útil y tres formatos demostrativos; `/waitlist` ofrece acceso con Google, validación en cliente y captura protegida por RLS; `/about` publica métricas de distribución honestas, distingue ceros de métricas externas no instrumentadas e incluye el canal social público confirmado [@elvalidadordeof](https://x.com/elvalidadordeof). Auth y persistencia requieren configurar Supabase.
 
 ## 3. Wireframes ASCII
 
@@ -266,7 +266,7 @@ En tres años, el Validador del Comercio ayudará a distribuidores regionales a 
 - No se envían telemetría, RFC, OTP de WhatsApp, ni solicitudes reales a SAT; no hay integración ERP, WhatsApp, pasarela de pago ni CNBV/SIC.
 - No se publican datos reales, resultados de cohortes reales, métricas de conversión no instrumentadas ni estimaciones presentadas como hechos.
 - Esta semana no se implementan cuentas, edición ni borrado de solicitudes; el formulario requiere Google Auth y la tabla solo permite a cada usuario insertar y leer su propia fila.
-- El canal social no se inventa: el URL exacto está pendiente de confirmación.
+- El canal social confirmado es https://x.com/elvalidadordeof; los datos de seguidores siguen sin instrumentarse.
 
 ## 8. Playbook de marca y campaña
 

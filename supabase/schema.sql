@@ -5,7 +5,9 @@ create table if not exists public.waitlist_leads (
   rfc text not null,
   route_count integer not null,
   whatsapp text not null,
+  consented_at timestamptz not null,
   created_at timestamptz not null default now(),
+  constraint waitlist_one_row_per_user unique (user_id),
   constraint waitlist_company_name_length
     check (char_length(btrim(company_name)) between 2 and 80),
   constraint waitlist_rfc_format

@@ -7,6 +7,7 @@ import { useTactileAudio } from "./hooks/useTactileAudio.js";
 import AboutPage from "./pages/AboutPage.jsx";
 import DistributionPage from "./pages/DistributionPage.jsx";
 import PricingPage from "./pages/PricingPage.jsx";
+import WaitlistPage from "./pages/WaitlistPage.jsx";
 import {
   clearAudioChunks,
   syncPendingAudioSessionToDrive,
@@ -331,6 +332,9 @@ function AppNavigation() {
         <Link aria-current={pathname === "/distribution" ? "page" : undefined} to="/distribution">
           Distribución
         </Link>
+        <Link aria-current={pathname === "/waitlist" ? "page" : undefined} to="/waitlist">
+          Acceso
+        </Link>
       </nav>
     </header>
   );
@@ -346,6 +350,7 @@ function App() {
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/distribution" element={<DistributionPage />} />
+          <Route path="/waitlist" element={<WaitlistPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

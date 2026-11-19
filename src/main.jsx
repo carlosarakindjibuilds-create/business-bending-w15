@@ -5,6 +5,7 @@ import ConsoleLogger from "./components/ConsoleLogger.jsx";
 import { useAudioRecovery } from "./hooks/useAudioRecovery.js";
 import { useTactileAudio } from "./hooks/useTactileAudio.js";
 import AboutPage from "./pages/AboutPage.jsx";
+import DistributionPage from "./pages/DistributionPage.jsx";
 import PricingPage from "./pages/PricingPage.jsx";
 import {
   clearAudioChunks,
@@ -308,6 +309,8 @@ function AppNavigation() {
       "/": "Captura | Validador del Comercio",
       "/pricing": "Precios y simulador | Validador del Comercio",
       "/about": "Memo de valor 10:1 | Validador del Comercio",
+      "/distribution": "Distribución | Validador del Comercio",
+      "/waitlist": "Acceso anticipado | Validador del Comercio",
     };
     document.title = pageTitles[pathname] || "Validador del Comercio";
   }, [pathname]);
@@ -325,6 +328,9 @@ function AppNavigation() {
         <Link aria-current={pathname === "/about" ? "page" : undefined} to="/about">
           Memo 10:1
         </Link>
+        <Link aria-current={pathname === "/distribution" ? "page" : undefined} to="/distribution">
+          Distribución
+        </Link>
       </nav>
     </header>
   );
@@ -339,6 +345,7 @@ function App() {
           <Route path="/" element={<CapturePage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/distribution" element={<DistributionPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
